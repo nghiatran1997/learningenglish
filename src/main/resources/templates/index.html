@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+  <html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Learning vocabulary</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+</head>
+<body>
+	<div class= "wrapper">	
+		<div id="sidebar">
+			<div class="toggle">
+				<img id="image-icon" src="https://img.icons8.com/bubbles/50/000000/menu.png">
+			</div>
+			<ul>
+				<div id="user-infor">
+					<div class="user-logo"><img src="https://img.icons8.com/dotty/40/000000/user.png"></div>
+					<div class="user-name">Trần Nghĩa</div>
+				</div>
+			</ul>
+			<ul>
+				<li><a href="" title="">Vocabulary insert</a></li>
+				<li><a href="" title="">History Answer</a></li>
+				<li><a href="" title="">Target per day</a></li>
+				<li><a href="" title="">Report value</a></li>
+			</ul>
+		</div>
+		<div class="row"> 
+		  <div class="column">
+		    
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+
+		  </div>
+		  
+		  <div class="column">
+		  	<div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 450px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 250px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 230px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 520px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 120px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 430px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 220px;background: black;"></div>`
+		    <div class="img" style="width: 100%;height: 155px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 123px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 321px;background: black;"></div>
+		  </div> 
+		   
+		  <div class="column">
+			<div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		  </div>
+		  
+		  <div class="column">
+			<div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		    <div class="img" style="width: 100%;height: 150px;background: black;"></div>
+		  </div>
+		</div>
+	</div>
+<script type="text/javascript">
+	document.getElementById('image-icon').addEventListener('click',()=>{
+		document.getElementById('sidebar').classList.toggle('active');
+		document.getElementsByClassName('row')[0].classList.toggle('active');
+	});
+
+</script>
+</body>
+</html>

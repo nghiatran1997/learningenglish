@@ -1,0 +1,151 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+#wrap {
+	width: 100%;
+	height: 100vh;
+}
+#wrap #image-logo {
+	background-image: url('../image/bg-01.jpg');
+	background-size: cover;
+	float : left;
+	width: 65%;
+	height: 100%;
+}
+.tag-login {
+	text-align: center;
+}
+#wrap #login-container {
+	float : right;
+	width: 35%;
+	height: 100%;
+	position: relative;
+}
+#login-container #login-form{
+	top : 25%;
+	left: 10%;
+	width: 80%;
+	height: 60%;
+	position: absolute;
+}
+.login-btn {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+#wrap-register{
+	background-image: url('../image/sky03.jpg');
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+#register-form {
+ 	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 30%;
+	height: 60%;
+}
+.wrapper {
+	width: 100%;
+	height: 100vh;
+}
+
+#sidebar {
+	position: fixed;
+	width: 20%;
+	height: 100vh;
+	background-color: rgb(107, 151, 176);
+	left: -20%;
+	transition: all 100ms linear;
+}
+#user-infor {
+	display: flex;
+	flex-direction: row;
+}
+#user-infor #user-logo{
+	width: 20%;
+}
+.user-name {
+	padding-top: 0.5em;
+    font-size: 20px;
+    padding-left: 1em;
+}
+#sidebar.active {
+	left: 0px;
+}
+#sidebar .toggle{
+	left: 105%;
+    top: 5px;
+    position: absolute;
+}
+#sidebar ul {
+	padding: 0px;
+	width: 100%;
+	height: auto;
+}
+
+ul li {
+	padding: 10px 0px 10px 5%;
+	width: 95%;
+	height: 20%;
+	list-style: none;
+	border-top: 1px solid black;
+
+}
+
+ul li a {
+	text-decoration: none;
+	color : white;
+}
+
+* {
+  box-sizing: border-box;
+}
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.row.active{ 
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  width: 80%;
+  float: right;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 2px;
+}
+
+.column .img {
+  margin-top: 4px;
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+

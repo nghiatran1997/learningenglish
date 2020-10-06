@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+  <html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Login</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div id="wrap-register">
+		<div id="image-logo"></div>
+		<div id="login-container">
+			<div id="login-form">
+				<h2 class="tag-login">Login</h2>
+				<form  action="loginAuthen">
+					<label>User name</label>
+					<input type="text" class="form-control" placeholder="Username" aria-label="Username" >
+					<label>Password</label>
+					<input type="password" class="form-control" placeholder="Password" aria-label="Password" >
+					<div class="form-check">
+  						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">
+    						Remember password
+  						</label>
+					</div>
+					<input class="btn btn-primary login-btn" type="submit" value="Login">
+					<a th:href="@{/register}"><input class="btn btn-primary login-btn" type="button" value="Register"
+					></a>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
