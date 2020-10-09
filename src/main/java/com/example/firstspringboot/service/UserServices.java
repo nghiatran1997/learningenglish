@@ -9,6 +9,6 @@ public interface UserServices {
 	
 	public List<Users> getAllUsers();
 	
-	public boolean authentication(String id , String password);
+	public Users authentication(String userName , String password);
 
 }

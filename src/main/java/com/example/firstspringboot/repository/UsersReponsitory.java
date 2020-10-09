@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.firstspringboot.model.Users;
@@ -18,7 +19,7 @@ public interface UsersReponsitory extends JpaRepository<Users, Long>{
 	List<Users> getAllUsers();
 	
 	
-	@Query(value="SELECT USER_NAME,PASSWORD FROM USERS", nativeQuery = true)
-	Users authentication();
+	@Query(value="SELECT * FROM USERS WHERE USER_NAME =:username AND PASSWORD =:password", nativeQuery = true)
+	Users authentication(@Param("username") String username, @Param("password") String password);
 	
 }

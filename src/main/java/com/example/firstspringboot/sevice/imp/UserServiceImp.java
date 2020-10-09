@@ -21,9 +21,9 @@ public class UserServiceImp implements UserServices{
 	}
 
 	@Override
-	public boolean authentication(String id , String password) {
-		Users user = userReponsitory.authentication();
-		return user.getUserName().equals(id) && user.getPassWord().equals(password) ? true : false;
+	public Users authentication(String userName , String password) {
+		Users user = userReponsitory.authentication(userName,password);
+		return user;
 	}
 	
 	
