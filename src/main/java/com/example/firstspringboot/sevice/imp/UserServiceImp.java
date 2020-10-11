@@ -26,5 +26,21 @@ public class UserServiceImp implements UserServices{
 		return user;
 	}
 	
+	@Override
+	public Users checkExistUser(String userName) {
+		return userReponsitory.checkExistUser(userName);
+	}
+	
+	@Override
+	public int registNewUser(Users user) {
+		
+		String userName = user.getUserName();
+		String password = user.getPassWord();
+		String firstName = user.getFirstName();
+		String lastName = user.getLastName();
+		
+		return userReponsitory.insertNewUser(userName, password, firstName, lastName);
+	}
+	
 	
 }

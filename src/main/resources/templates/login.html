@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Login</title>
-<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{asset/css/style.css}">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -35,7 +35,7 @@
 				</form>
 				<div style="text-align: left; width: 100%">
 					<p style="color: red; font-weight: bold; font-size: 18px"
-						id="errorLogin">${message}</p>
+						id="errorLogin" th:text ="${message}"></p>
 				</div>
 			</div>
 		</div>
