@@ -11,8 +11,10 @@ public interface UserServices {
 	
 	public Users authentication(String userName , String password);
 	
+	public Integer checkExistUserAPI(String userName);
+	
 	public Users checkExistUser(String userName);
 	
-	public int registNewUser(Users user);
+	public Users registNewUser(Users user);
 
 }

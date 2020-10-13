@@ -18,20 +18,21 @@
 	<div id="wrap-register">
 		<div id="register-form">
 			<h2 class="tag-login">Register</h2>
-			<form action="doRegist" th:object="${user}" method="POST">
+			<form action="doRegist" th:object="${user}" method="POST" id="registForm">
 				<label>User name</label> 
-				<input id="user_name" type="text" class="form-control" placeholder="Username" aria-label="Username" name="userName">
+				<input id="user_name" type="text" class="form-control" placeholder="Username" aria-label="Username" name="userName" required>
 				<p id="check_message"></p>
 			    <label>Password</label> 
-				<input id="password" type="password" class="form-control" placeholder="Password" aria-label="Password" name="password">
+				<input id="password" type="password" class="form-control" placeholder="Password" aria-label="Password" name="passWord" required>
 				<label>Re-Password</label>
-				<input id="re_password" type="password" class="form-control" placeholder="Re-Password" aria-label="Re-Password" name="rePassword">
+				<input id="re_password" type="password" class="form-control" placeholder="Re-Password" aria-label="Re-Password" required>
+				<p id="re_password"></p>
 				<label>First Name</label> 
-				<input id="first_name" type="text" class="form-control" placeholder="First name" aria-label="fist name" name="firstName">
+				<input id="first_name" type="text" class="form-control" placeholder="First name" aria-label="fist name" name="firstName" required>
 				<label>Last Name</label>
-				<input id="last_name" type="text" class="form-control" placeholder="Last name" aria-label="lastName">
+				<input id="last_name" type="text" class="form-control" placeholder="Last name" aria-label="last Name" name="lastName" required>
 				 </br> 
-				<input id="btnRegist" class="btn btn-primary login-btn" type="submit" value="Register">
+				<button id="btnRegist" class="btn btn-primary login-btn" >Register</button>
 			</form>
 		</div>
 	</div>

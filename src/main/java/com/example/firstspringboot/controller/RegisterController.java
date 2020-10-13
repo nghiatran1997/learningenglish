@@ -3,6 +3,8 @@ package com.example.firstspringboot.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +25,7 @@ public class RegisterController {
 	final String USER_NAME_NULL ="User name can not be null";
 	
 	final String NULL_PASWORD ="Password can not be null";
-	
-	final String NULL_RE_PASS ="Re-pasword can not be null";
-	
-	final String RE_PASS_NOT_CORRECT ="Re-password is not correct";
-	
+			
 	final String NULL_FIRST_NAME = "First name can not be null";
 	
 	final String NULL_LAST_NAME = "Last name can not be null";
@@ -41,20 +39,23 @@ public class RegisterController {
 	}
 	
 	@PostMapping("doRegist")
-	public String doRegist(@ModelAttribute (value="user") Users user, @RequestAttribute("rePassword") String rePassword, RedirectAttributes redirectAttributes) {
+	public String doRegist(@ModelAttribute (value="user") Users user, RedirectAttributes redirectAttributes, HttpSession session) {
 		
-		List<String> messageLog = registValidate(user, rePassword);
-		if (messageLog != null) {
+		List<String> messageLog = registValidate(user);
+		if (!messageLog.isEmpty()) {
 			redirectAttributes.addFlashAttribute("message",messageLog);
 			return "redirect:/register";
 		}
 		// Insert new User
 		insertNewUser(user);
+		
+		// Setting session
+		session.setAttribute("user", user);
 
 		return "redirect:/";
 	}
 	
-	private List<String> registValidate(Users user,String rePassword ) {
+	private List<String> registValidate(Users user) {
 		List<String> messageLog =  new ArrayList<String>();
 		if (user.getUserName() == null) {
 			messageLog.add(USER_NAME_NULL);
@@ -62,30 +63,26 @@ public class RegisterController {
 		else {
 
 			Users userCheck = userServiceImp.checkExistUser(user.getUserName());
-			if (userCheck != null ) {
-				messageLog.add(USER_EXIST);
-			}
-			if (userCheck.getPassWord() == null) {
-				messageLog.add(NULL_PASWORD);
-			} 
-			if (rePassword == null) {
-				messageLog.add(NULL_RE_PASS);
-			}
-			if (!userCheck.getPassWord().equals(rePassword)) {
-				messageLog.add(RE_PASS_NOT_CORRECT);
-			}
-			if (userCheck.getFirstName() == null) {
-				messageLog.add(NULL_FIRST_NAME);
-			}
-			if (userCheck.getLastName() == null) {
-				messageLog.add(NULL_LAST_NAME);
+			if (userCheck != null) {
+				if (userCheck != null ) {
+					messageLog.add(USER_EXIST);
+				}
+				if (userCheck.getPassWord() == null) {
+					messageLog.add(NULL_PASWORD);
+				} 
+				if (userCheck.getFirstName() == null) {
+					messageLog.add(NULL_FIRST_NAME);
+				}
+				if (userCheck.getLastName() == null) {
+					messageLog.add(NULL_LAST_NAME);
+				}
 			}
 		}
 		return messageLog;
 		
 	}
 	
-	private int insertNewUser(Users user) {
+	private Users insertNewUser(Users user) {
 		return userServiceImp.registNewUser(user);
 	}
 }

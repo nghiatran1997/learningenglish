@@ -15,7 +15,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		// check user has login
-		String[] listPath = {"/login","/doLogin","/register","/asset/**"};
+		String[] listPath = {"/login","/doLogin","/register","/asset/**","/usersApiCheck/**","/doRegist"};
 		List<String> excludeLoginPath = Arrays.asList(listPath);
 		registry.addInterceptor(new LoginInterceptor()).excludePathPatterns(excludeLoginPath);
 	}

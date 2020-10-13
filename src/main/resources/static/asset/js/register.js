@@ -1,12 +1,19 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 	// validate for register
 	var btnRegist = document.getElementById('btnRegist');
-	btnRegist.addEventListener('onclick',function() {
+	btnRegist.addEventListener('click',function() {
 		let userName = document.getElementById('user_name');
 		let password = document.getElementById('password');
 		let rePassword = document.getElementById('re_password');
+		if (password.value != rePassword.value) {
+			document.getElementById("re_password").innerHTML = "Re-password is not correct";
+	    	document.getElementById("re_password").style.color= "red";
+		} else {
+			btnRegist.submit();
+		}
 	})
 	
+	// Check exist user name
 	var userName = document.getElementById('user_name');
 	var locationPath = String(window.location).substring(0, String(window.location).indexOf("/",10));
 	userName.addEventListener('focusout', function() {
@@ -15,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		  xhttp.onreadystatechange = function() {
 		  if (xhttp.readyState == 4 && xhttp.status == 200) {
 			  console.log(xhttp.responseText);
-		      if (xhttp.responseText == "" ) {
+		      if (xhttp.responseText == "0" ) {
 		    	  document.getElementById("check_message").innerHTML = "You can use this user name";
 		    	  document.getElementById("check_message").style.color= "green";
 		      } else {
@@ -24,7 +31,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		      }
 		    }
 		  };
-		  xhttp.open("GET", locationPath+"/users/"+userNameVl, true);
+		  xhttp.open("GET", locationPath+"/usersApiCheck/"+userNameVl, true);
 		  xhttp.send();
 	});
 });

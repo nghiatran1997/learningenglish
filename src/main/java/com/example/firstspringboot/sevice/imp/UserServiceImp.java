@@ -6,40 +6,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.firstspringboot.model.Users;
-import com.example.firstspringboot.repository.UsersReponsitory;
+import com.example.firstspringboot.repository.UsersRepository;
 import com.example.firstspringboot.service.UserServices;
 
 @Service
 public class UserServiceImp implements UserServices{
 
 	@Autowired
-	public UsersReponsitory userReponsitory;
+	public UsersRepository userRepository;
 	
 	@Override
 	public List<Users> getAllUsers() {		
-		return userReponsitory.getAllUsers();
+		return userRepository.getAllUsers();
 	}
 
 	@Override
 	public Users authentication(String userName , String password) {
-		Users user = userReponsitory.authentication(userName,password);
+		Users user = userRepository.authentication(userName,password);
 		return user;
 	}
 	
 	@Override
-	public Users checkExistUser(String userName) {
-		return userReponsitory.checkExistUser(userName);
+	public Integer checkExistUserAPI(String userName) {
+		return userRepository.checkExistUserAPI(userName);
 	}
 	
 	@Override
-	public int registNewUser(Users user) {
-		
-		String userName = user.getUserName();
-		String password = user.getPassWord();
-		String firstName = user.getFirstName();
-		String lastName = user.getLastName();
-		
-		return userReponsitory.insertNewUser(userName, password, firstName, lastName);
+	public Users checkExistUser(String userName) {
+		return userRepository.checkExistUser(userName);
+	}
+	
+	@Override
+	public Users registNewUser(Users user) {
+		return userRepository.save(user);
 	}
 	
 	

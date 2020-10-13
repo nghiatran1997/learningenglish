@@ -35,9 +35,9 @@ public class UsersControllerApi {
 		return userLst; 
 	}
 	
-	@GetMapping("/users/{userName}")
-	public Users checkExistUser(@PathVariable("userName") String userName) throws Exception {
-		return  (Users) stringUtil.trimReflective(userServicesImp.checkExistUser(userName)); 
+	@GetMapping("/usersApiCheck/{userName}")
+	public Integer checkExistUser(@PathVariable("userName") String userName) throws Exception {
+		return  userServicesImp.checkExistUserAPI(userName); 
 	}
 	
 
